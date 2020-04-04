@@ -18,7 +18,7 @@ namespace RestauranteCodenation.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"server=MAH-DELL\SQLEXPRESS;database=RestauranteDaEsquina;trusted_connection=true;");
+            optionsBuilder.UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=codenation;Trusted_Connection=True;");
             base.OnConfiguring(optionsBuilder);
         }
 

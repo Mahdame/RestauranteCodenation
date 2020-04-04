@@ -9,18 +9,18 @@ namespace RestauranteCodenation.Data.Map
 {
     public class PratosIngredientesMap : IEntityTypeConfiguration<PratosIngredientes>
     {
-        public void Configure(EntityTypeBuilder<PratosIngredientes> builder)
+        public void Configure(EntityTypeBuilder<PratosIngredientes> eb)
         {
-            builder.ToTable("PratosIngredientes");
-            builder.HasKey(t => new { t.Ingrediente, t.IdPrato });
+            eb.ToTable("PratosIngredientes");
+            eb.HasKey(x => new { x.IdIngrediente, x.IdPrato });
 
-            builder.HasOne(i => i.Ingrediente)
-                .WithMany(pi => pi.PratosIngredientes)
-                .HasForeignKey(i => i.IdIngrediente);
+            eb.HasOne(x => x.Ingrediente)
+              .WithMany(x => x.PratosIngredientes)
+              .HasForeignKey(x => x.IdIngrediente);
 
-            builder.HasOne(p => p.Prato)
-                .WithMany(pi => pi.PratosIngredientes)
-                .HasForeignKey(p => p.IdPrato);
+            eb.HasOne(x => x.Prato)
+              .WithMany(x => x.PratosIngredientes)
+              .HasForeignKey(x => x.IdPrato);
         }
     }
 }

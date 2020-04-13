@@ -21,9 +21,9 @@ namespace RestauranteCodenation.Data.Migrations
 
             modelBuilder.Entity("RestauranteCodenation.Domain.Agenda", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("DataFim")
@@ -39,11 +39,18 @@ namespace RestauranteCodenation.Data.Migrations
 
             modelBuilder.Entity("RestauranteCodenation.Domain.AgendaCardapio", b =>
                 {
-                    b.Property<long>("IdAgenda")
-                        .HasColumnType("bigint");
+                    b.Property<int>("IdAgenda")
+                        .HasColumnType("int");
 
-                    b.Property<long>("IdCardapio")
-                        .HasColumnType("bigint");
+                    b.Property<int>("IdCardapio")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
+                        .HasAnnotation("SqlServer:IdentitySeed", 1)
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.HasKey("IdAgenda", "IdCardapio");
 
@@ -54,9 +61,9 @@ namespace RestauranteCodenation.Data.Migrations
 
             modelBuilder.Entity("RestauranteCodenation.Domain.Cardapio", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Descricao")
@@ -73,9 +80,9 @@ namespace RestauranteCodenation.Data.Migrations
 
             modelBuilder.Entity("RestauranteCodenation.Domain.Ingrediente", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Descricao")
@@ -95,20 +102,20 @@ namespace RestauranteCodenation.Data.Migrations
 
             modelBuilder.Entity("RestauranteCodenation.Domain.Prato", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<long?>("CardapioId")
-                        .HasColumnType("bigint");
+                    b.Property<int?>("CardapioId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Descricao")
                         .IsRequired()
                         .HasColumnType("varchar(500)");
 
-                    b.Property<long>("IdTipoPrato")
-                        .HasColumnType("bigint");
+                    b.Property<int>("IdTipoPrato")
+                        .HasColumnType("int");
 
                     b.Property<string>("Nome")
                         .IsRequired()
@@ -128,11 +135,18 @@ namespace RestauranteCodenation.Data.Migrations
 
             modelBuilder.Entity("RestauranteCodenation.Domain.PratosIngredientes", b =>
                 {
-                    b.Property<long>("IdIngrediente")
-                        .HasColumnType("bigint");
+                    b.Property<int>("IdIngrediente")
+                        .HasColumnType("int");
 
-                    b.Property<long>("IdPrato")
-                        .HasColumnType("bigint");
+                    b.Property<int>("IdPrato")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
+                        .HasAnnotation("SqlServer:IdentitySeed", 1)
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.HasKey("IdIngrediente", "IdPrato");
 
@@ -143,9 +157,9 @@ namespace RestauranteCodenation.Data.Migrations
 
             modelBuilder.Entity("RestauranteCodenation.Domain.TipoPrato", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Descricao")

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestauranteCodenation", "RestauranteCodenation\RestauranteCodenation.csproj", "{91A7623A-5373-48BE-A189-1D40E4350029}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestauranteCodenation.Api", "RestauranteCodenation\RestauranteCodenation.Api.csproj", "{91A7623A-5373-48BE-A189-1D40E4350029}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestauranteCodenation.Domain", "RestauranteCodenation.Domain\RestauranteCodenation.Domain.csproj", "{D974E512-7E28-4FB9-B93C-3CBC8D988C3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestauranteCodenation.Data", "RestauranteCodenation.Data\RestauranteCodenation.Data.csproj", "{A8771589-6D9D-4EE7-A44C-2E9E7FC85FD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestauranteCodenation.Data", "RestauranteCodenation.Data\RestauranteCodenation.Data.csproj", "{A8771589-6D9D-4EE7-A44C-2E9E7FC85FD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

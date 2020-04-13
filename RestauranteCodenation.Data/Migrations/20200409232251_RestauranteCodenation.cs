@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RestauranteCodenation.Data.Migrations
 {
-    public partial class codenation : Migration
+    public partial class RestauranteCodenation : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,7 +11,7 @@ namespace RestauranteCodenation.Data.Migrations
                 name: "Agenda",
                 columns: table => new
                 {
-                    Id = table.Column<long>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DataInicio = table.Column<DateTime>(type: "smalldatetime", nullable: false),
                     DataFim = table.Column<DateTime>(type: "smalldatetime", nullable: false)
@@ -25,7 +25,7 @@ namespace RestauranteCodenation.Data.Migrations
                 name: "Cardapio",
                 columns: table => new
                 {
-                    Id = table.Column<long>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "varchar(100)", nullable: false),
                     Descricao = table.Column<string>(type: "varchar(500)", nullable: true)
@@ -39,7 +39,7 @@ namespace RestauranteCodenation.Data.Migrations
                 name: "Ingrediente",
                 columns: table => new
                 {
-                    Id = table.Column<long>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "varchar(100)", nullable: false),
                     Descricao = table.Column<string>(type: "varchar(500)", nullable: true),
@@ -54,7 +54,7 @@ namespace RestauranteCodenation.Data.Migrations
                 name: "TipoPrato",
                 columns: table => new
                 {
-                    Id = table.Column<long>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Descricao = table.Column<string>(type: "varchar(100)", nullable: false)
                 },
@@ -67,8 +67,10 @@ namespace RestauranteCodenation.Data.Migrations
                 name: "AgendaCardapio",
                 columns: table => new
                 {
-                    IdCardapio = table.Column<long>(nullable: false),
-                    IdAgenda = table.Column<long>(nullable: false)
+                    IdCardapio = table.Column<int>(nullable: false),
+                    IdAgenda = table.Column<int>(nullable: false),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1")
                 },
                 constraints: table =>
                 {
@@ -91,13 +93,13 @@ namespace RestauranteCodenation.Data.Migrations
                 name: "Prato",
                 columns: table => new
                 {
-                    Id = table.Column<long>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "varchar(100)", nullable: false),
                     Descricao = table.Column<string>(type: "varchar(500)", nullable: false),
                     Preco = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    IdTipoPrato = table.Column<long>(nullable: false),
-                    CardapioId = table.Column<long>(nullable: true)
+                    IdTipoPrato = table.Column<int>(nullable: false),
+                    CardapioId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -120,8 +122,10 @@ namespace RestauranteCodenation.Data.Migrations
                 name: "PratosIngredientes",
                 columns: table => new
                 {
-                    IdPrato = table.Column<long>(nullable: false),
-                    IdIngrediente = table.Column<long>(nullable: false)
+                    IdPrato = table.Column<int>(nullable: false),
+                    IdIngrediente = table.Column<int>(nullable: false),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1")
                 },
                 constraints: table =>
                 {

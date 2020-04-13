@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using RestauranteCodenation.Domain;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace RestauranteCodenation.Data.Map
 {
@@ -21,6 +18,9 @@ namespace RestauranteCodenation.Data.Map
             eb.HasOne(x => x.Prato)
               .WithMany(x => x.PratosIngredientes)
               .HasForeignKey(x => x.IdPrato);
+
+            eb.Property(x => x.Id)
+                .UseIdentityColumn();
         }
     }
 }
